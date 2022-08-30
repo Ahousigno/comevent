@@ -56,94 +56,96 @@
 
                     <!--décoration-->
 
-                    
-
-    <!--Après l'évènement-->
 
 
+                    <!--Après l'évènement-->
 
 
 
-    <div style="border:1px solid #d9ccd5; padding:5px; background:#e3c5e5" class="row">
-        <div class="col-lg-12">
 
 
-            <fieldset>
-                <h3 class="text-blue color-uvci">Après-l'évènement</h3>
-                <hr>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label for="nom">lettre de remerciement<span style="color: red;"></span></label>
-                            <input type="file" id="lettre" class="form-control" name="lettre">
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label for="prenom">Rapport <span style="color: red;"></span></label>
-                            <input type="file" id="matricule" class="form-control" name="rapport">
-                        </div>
-                    </div>
-                </div>
-                </br>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label for="">Article UVCI <span style="color: red;"></span></label>
-                            <input type="file" id="article" class="form-control" name="article">
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label for="">Article médias <span style="color: red;"></span></label>
-                            <input type="file" id="media" class="form-control" name="medias">
-                            <div style="text-align:right" class="col-lg-6 form-group article">
-                                <input type="button" class="add-article" value="Ajouter un article">
-                                <!-- <button style="font-size:10px; border-radius:2px" type="button"
+                    <div style="border:1px solid #d9ccd5; padding:5px; background:#e3c5e5" class="row">
+                        <div class="col-lg-12">
+
+
+                            <fieldset>
+                                <h3 class="text-blue color-uvci">Après-l'évènement</h3>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="nom">lettre de remerciement<span
+                                                    style="color: red;"></span></label>
+                                            <input type="file" id="lettre" class="form-control" name="lettre">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="prenom">Rapport <span style="color: red;"></span></label>
+                                            <input type="file" id="matricule" class="form-control" name="rapport">
+                                        </div>
+                                    </div>
+                                </div>
+                                </br>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="">Article UVCI <span style="color: red;"></span></label>
+                                            <input type="file" id="article" class="form-control" name="article">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="">Article médias <span style="color: red;"></span></label>
+                                            <input type="file" id="media" class="form-control" name="medias">
+                                            <div style="text-align:right" class="col-lg-6 form-group article">
+                                                <input type="button" class="add-article" value="Ajouter un article">
+                                                <!-- <button style="font-size:10px; border-radius:2px" type="button"
                                     class="delete-emploi btn-danger">Supprimer un article</button> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                        </br></br>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="nom">pressbook<span style="color: red;"></span></label>
+                                    <input type="file" id="lettre" class="form-control" name="pressbook">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="prenom">album photo <span style="color: red;"></span></label>
+                                    <input type="file" id="matricule" class="form-control" name="album">
+                                    <div style="text-align:right" class="col-lg-6 form-group article">
+                                        <input type="button" class="add-article" value="Ajouter une photo">
+                                        <!-- <button style="font-size:10px; border-radius:2px" type="button"
+                                    class="delete-emploi btn-danger">Supprimer une photo</button> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </br></br>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="nom">liens des vidéos<span style="color: red;"></span></label>
+                                    <input type="text" id="lettre" class="form-control" name="lien">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="prenom">enquêtte de satisfaction <span
+                                            style="color: red;"></span></label>
+                                    <input type="file" id="matricule" class="form-control" name="enquete">
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-        </div>
-        </br></br>
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="form-group">
-                    <label for="nom">pressbook<span style="color: red;"></span></label>
-                    <input type="file" id="lettre" class="form-control" name="pressbook">
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="form-group">
-                    <label for="prenom">album photo <span style="color: red;"></span></label>
-                    <input type="file" id="matricule" class="form-control" name="album">
-                    <div style="text-align:right" class="col-lg-6 form-group article">
-                        <input type="button" class="add-article" value="Ajouter une photo">
-                        <!-- <button style="font-size:10px; border-radius:2px" type="button"
-                                    class="delete-emploi btn-danger">Supprimer une photo</button> -->
-                    </div>
-                </div>
             </div>
         </div>
-        </br></br>
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="form-group">
-                    <label for="nom">liens des vidéos<span style="color: red;"></span></label>
-                    <input type="text" id="lettre" class="form-control" name="lien">
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="form-group">
-                    <label for="prenom">enquêtte de satisfaction <span style="color: red;"></span></label>
-                    <input type="file" id="matricule" class="form-control" name="enquete">
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    </div>
     </div>
     </div>
     </div>
