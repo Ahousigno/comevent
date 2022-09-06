@@ -2,6 +2,13 @@
 
 @section("contenu")
 
+<style>
+.btn {
+    margin-left: auto;
+    display: block;
+    margin-right: auto;
+}
+</style>
 
 <section class="content" style="background:#f5f3f5; padding-bottom:20px">
     <div class="container-fluid">
@@ -62,112 +69,132 @@
                     <div style="border:1px solid #d9ccd5; padding:5px; background:#e3c5e5" class="row">
                         <div class="col-lg-12">
 
-                            <h3 class="text-blue color-uvci" style="text-align:center">Informations Générales</h3>
-                            </br>
+                            <h3 class="text-blue color-uvci" style="text-align:center">
+                                Informations Générales</h3></br>
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="nom">nom de l'évènement<span style="color: red;">*</span></label>
+                                    <div class="form-group"><label for="nom">nom de
+                                            l'évènement<span style="color: red;">*</span></label>
                                         <input type="text" id="nom" class="form-control" name="nom_event"
                                             value="{{$avant->nom_event}}">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="prenom">thème de l'évènement <span
-                                                style="color: red;"></span></label>
-                                        <input type="text" id="theme" class="form-control" name="theme"
-                                            value="{{$avant->theme}}">
+                                    <div class="form-group"><label for="prenom">thème de
+                                            l'évènement <span style="color: red;"></span></label><input type="text"
+                                            id="theme" class="form-control" name="theme" value="{{$avant->theme}}">
                                     </div>
                                 </div>
                             </div>
-
-
+                            <br>
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="nom">thème de référence (TDR)<span
-                                                style="color: red;">*</span></label>
-                                        <input type="file" id="tdr" class="form-control" name="tdr"
-                                            value="{{$avant->tdr}}">
-                                    </div>
+                                    <div class="form-group"><label for="nom">thème de
+                                            référence (TDR)<span style="color: red;">*</span></label><input type="file"
+                                            id="tdr" class="form-control" name="tdr"
+                                            value="{{asset('/images/'.$avant->tdr)}}"></div>
                                 </div>
                                 <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="prenom">programme <span style="color: red;">*</span></label>
-                                        <input type="file" id="programme" class="form-control" name="programme_file"
-                                            value="{{$avant->programme_file}}">
+                                    <div class="form-group"><label for="prenom">programme
+                                            <span style="color: red;">*</span></label><input type="file" id="programme"
+                                            class="form-control" name="programme_file"
+                                            value="{{asset('/images/'.$avant->programme_file)}}">
                                     </div>
                                 </div>
                             </div>
-
+                            <br>
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="nom">lieu<span style="color: red;">*</span></label>
-                                        <input type="text" id="lieu" class="form-control" name="lieu"
-                                            value="{{$avant->lieu}}">
-                                    </div>
+                                    <div class="form-group"><label for="prenom">date de début <span
+                                                style="color: red;"></span></label><input type="date" id="date_debut"
+                                            class="form-control" name="date_debut" value="{{$avant->date_debut}}"></div>
                                 </div>
                                 <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="prenom">date <span style="color: red;"></span></label>
-                                        <input type="date" id="date" class="form-control" name="date"
-                                            value="{{$avant->tade}}">
-                                    </div>
+                                    <div class="form-group"><label for="prenom">date de fin <span
+                                                style="color: red;"></span></label><input type="date" id="date_fin"
+                                            class="form-control" name="date_fin" value="{{$avant->date_fin}}"></div>
                                 </div>
                             </div>
 
-
+                            <br>
                             <div class="row">
                                 <div class="col-sm-6">
+                                    <!-- <div class="form-group"><label for="nom">catégorie de
+                                                                        l'évènement<span
+                                                                            style="color: red;">*</span></label><select
+                                                                        class="form-control custom-select"
+                                                                        name="cathegorie">
+
+                                                                        <option selected value="Scientifique">
+                                                                            Scientifique</option>
+                                                                        <option selected value="Commercial">Commercial
+                                                                        </option>
+                                                                        <option selected value="Autres">Autres</option>
+                                                                    </select></div>
+                                                            </div> -->
+
                                     <div class="form-group">
-                                        <label for="nom">catégorie de l'évènement<span
-                                                style="color: red;">*</span></label>
-                                        <select class="form-control custom-select" name="cathegorie"
-                                            value="{{$avant->cathegorie}}">
-                                            <option value="">---- Selectionnez ---</option>
-                                            <option selected value="Scientifique">Scientifique</option>
-                                            <option selected value="Commercial">Commercial</option>
-                                            <option selected value="Autres">Autres</option>
+                                        <select class="form-select" aria-label="Default select example" type="text"
+                                            name="cathegorie" value="{{$avant->cathegorie}}">
+                                            <option selected>Catégorie de l'évènement
+                                            </option>
+                                            <option value="Commercial">Commercial</option>
+                                            <option value="Scientifique">Scientifique
+                                            </option>
+                                            <option value="Culturel">Culturel</option>
+                                            <option value="Pédagogique">Pédagogique</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label for="prenom">portée de l'évènement <span
-                                                style="color: red;"></span></label>
-                                        <select class="form-control custom-select" name="portee"
-                                            value="{{$avant->portee}}">
-                                            <option selected value="">---- Selectionnez ---</option>
+                                        <select class="form-select" aria-label="Default select example" type="text"
+                                            name="portee" value="{{$avant->portee}}">
+                                            <option selected>Portée de l'évènement
+                                            </option>
                                             <option value="UVCI">UVCI</option>
-                                            <option selected value="NATIONAL">NATIONAL</option>
-                                            <option selected value="INTERNATIONAL">INTERNATIONAL</option>
+                                            <option value="National">National
+                                            </option>
+                                            <option value="International">International
+                                            </option>
                                         </select>
                                     </div>
                                 </div>
                             </div>
-
+                            <br>
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="nom">budget<span style="color: red;">*</span></label>
-                                        <input type="number" id="budget" class="form-control" name="budget"
-                                            value="{{$avant->budget}}">
-                                    </div>
+                                    <div class="form-group"><label for="nom">budget<span
+                                                style="color: red;">*</span></label><input type="number" id="budget"
+                                            class="form-control" name="budget" value="{{$avant->budget}}"></div>
                                 </div>
                                 <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="besoin">besoin <span style="color: red;"></span></label>
-                                        <input type="file" id="besoin" class="form-control" name="besoin"
-                                            value="{{$avant->besoin}}">
-                                    </div>
+                                    <div class="form-group"><label for="nom">lieu<span
+                                                style="color: red;">*</span></label><input type="text" id="lieu"
+                                            class="form-control" name="lieu" value="{{$avant->lieu}}"></div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group"><label for="besoin">besoin <span
+                                                style="color: red;"></span></label><input type="file" id="besoin"
+                                            class="form-control" name="besoin"
+                                            value="{{asset('/images/'.$avant->besoin)}}"></div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div class="form-group"><label for="besoin">Liste invités <span
+                                                style="color: red;"></span></label><input type="file" id="liste"
+                                            class="form-control" name="liste"
+                                            value="{{asset('/images/'.$avant->liste)}}"></div>
                                 </div>
                             </div>
 
-                            </br>
+                            <br>
                             <button type="submit" class="btn btn-primary" style="width:45%; background:#951b81">Envoyer
-                                pour validation</button>
+                                pour
+                                validation</button>
 
                         </div>
                     </div>

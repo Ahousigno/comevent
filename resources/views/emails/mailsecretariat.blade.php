@@ -13,7 +13,7 @@
     <div style="margin: 20px 10px;">
 
         <h4 style="margin-left: 25px; font-size:25px">
-            Service Communication</h4>
+            Sous-Direction de la Communication</h4>
 
         <div style="margin-left: 25px;">
             <p style="margin-left: 25px; font-size:15px">
@@ -22,7 +22,7 @@
                 un nouvel invité vient d'être ajouté pour l'évènement.
                 <br>
 
-                <a style="text-decoration: none; color: red;" href="{{asset('/images/'.$data['courrier']->nom_invite)}}"
+                <a style="text-decoration: none; color: red;" href="{{$courrier->fonction_invite}}"
                     target="_blank">ci-joint les informations</a>
             </p>
         </div><br>

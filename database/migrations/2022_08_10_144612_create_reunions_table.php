@@ -15,8 +15,12 @@ return new class extends Migration
     {
         Schema::create('reunions', function (Blueprint $table) {
             $table->id();
-            $table->string('reunion')->nullable();
-            $table->string('cr')->nullable();
+            $table->string('ordre')->nullable();
+            $table->string('date_reunion')->nullable();
+            $table->string('heure_debut')->nullable();
+            $table->string('heure_fin')->nullable();
+            $table->string('canal')->nullable();
+            $table->string('lein_reunion')->nullable();
             $table->timestamps();
         });
     }

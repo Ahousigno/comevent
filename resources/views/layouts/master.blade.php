@@ -67,10 +67,10 @@
 
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="">Accueil</a>
+                        <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="{{route('avant')}}">Avant</a>
+                        <a class="nav-link" aria-current="page" href="{{route('infos')}}">Avant</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="{{route('apres')}}">Après</a>

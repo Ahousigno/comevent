@@ -76,13 +76,12 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
-                            <label for="prenom"><select class="form-select" aria-label="Default select example"
-                                    type="text" name="etat">
-                                    <option selected>Etat du courier</option>
-                                    <option value="Confirmé">Confimé</option>
-                                    <option value="non-confirmé">non-confimé</option>
-                                    <option value="non-accepté">non-accepté</option>
-                                </select><span style="color: red;"></span></label>
+                            <select class="form-select" aria-label="Default select example" type="text" name="etat">
+                                <option selected>Etat du courier</option>
+                                <option value="Confirmé">Confimé</option>
+                                <option value="non-confirmé">non-confimé</option>
+                                <option value="non-accepté">non-accepté</option>
+                            </select><span style="color: red;"></span></label>
                         </div>
                     </div>
                     </br></br>

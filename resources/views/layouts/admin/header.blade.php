@@ -33,11 +33,11 @@
                                     <div class="col-lg-6 col-md-7 col-sm-6 col-xs-12">
                                         <div class="header-top-menu tabl-d-n">
                                             <ul class="nav navbar-nav mai-top-nav">
-                                                <li class="nav-item"><a href="#" class="nav-link">Accueil</a>
+                                                <li class="nav-item"><a href="" class="nav-link">Accueil</a>
                                                 </li>
-                                                <li class="nav-item"><a href="#" class="nav-link">Avant</a>
+                                                <li class="nav-item"><a href="#" class="{{route('infos')}}">Avant</a>
                                                 </li>
-                                                <li class="nav-item"><a href="#" class="nav-link">Après</a>
+                                                <li class="nav-item"><a href="#" class="{{route('apres')}}">Après</a>
                                                 </li>
                                                 <!-- <li class="nav-item dropdown res-dis-nn">
                                                     <a href="#" data-toggle="dropdown" role="button"

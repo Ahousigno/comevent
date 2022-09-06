@@ -13,13 +13,14 @@ class TableController extends Controller
     public function index()
     {
         $avants = Avant::paginate(5);
+        // dd($avants);
         return view('admin.table', compact("avants"));
     }
     //partie valider
     public function valider(Avant $avant)
     {
         // dd($avant);
-        $mailinterne = ['medias@uvci.edu.ci', 'patrimoine@uvci.edu.ci', 'signo.aviet@uvci.edu.ci'];
+        $mailinterne = ['medias@uvci.edu.ci', 'patrimoine@uvci.edu.ci', 'signo.aviet@uvci.edu.ci', 'secretariat@uvci.edu.ci', 'georgette.assemian@uvci.edu.ci'];
         $maildata = [];
         $maildata['avant'] = $avant;
         Mail::to($mailinterne)->send(new Confirmationmail($maildata));
@@ -42,11 +43,13 @@ class TableController extends Controller
             "tdr" => 'required',
             "programme_file" => 'required',
             "budget" => 'required',
-            "date" => 'required',
+            "date_debut" => 'required',
+            "date_fin" => 'required',
             "lieu" => "required",
             "cathegorie" => 'nullable',
             "portee" => 'nullable',
             "besoin" => 'nullable',
+            "liste" => 'nullable',
         ]);
         // dd($avant);
         $avant->update([
@@ -55,11 +58,13 @@ class TableController extends Controller
             "tdr" => $request->tdr,
             "programme_file" => $request->programme_file,
             "budget" => $request->budget,
-            "date" => $request->date,
+            "date_debut" => $request->date_debut,
+            "date_fin" => $request->date_fin,
             "lieu" => $request->lieu,
             "cathegorie" => $request->cathegorie,
             "portee" => $request->portee,
             "besoin" => $request->besoin,
+            "liste" => $request->liste,
         ]);
 
         // $avant = new Avant();
@@ -91,15 +96,17 @@ class TableController extends Controller
             $image->move(public_path("images"), $imageName);
             $avant->besoin = $imageName;
         }
+        if ($request->liste) {
+            $image = $request->liste;
+            $imageName = time() . '.' . $image->extension();
+            $image->move(public_path("images"), $imageName);
+            $avant->liste = $imageName;
+        }
         // $avant->save();
         // $avant->update($request->all);
-
+        $avant->update();
         return back()->with("success", "évènement mis à jour avec succès!");
     }
-
-
-
-
     //partie delete
     public function delete(Avant $avant)
     {

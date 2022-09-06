@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('psd')->nullable();
             $table->string('banderole')->nullable();
             $table->string('psdo')->nullable();
+            $table->string('lien_media')->nullable();
             $table->timestamps();
         });
     }

@@ -43,7 +43,7 @@
 
                                 <div class="fixed-table-toolbar">
                                     <div class="bs-bars pull-left">
-                                        {{$avants->links()}}
+                                        {{$logistiques->links()}}
                                     </div>
                                     <div>
 
@@ -87,72 +87,38 @@
                                         <th data-field="id">ID</th>
                                         <tr>
                                             <th scope="col" data-field="id">#</th>
-                                            <th scope="col" data-field="name" data-editable="true">Nom</th>
-                                            <th scope="col" data-field="name" data-editable="true">Thème</th>
-                                            <th scope="col" data-field="name" data-editable="true">TDR</th>
-                                            <th scope="col" data-field="name" data-editable="true">Programme</th>
-                                            <th scope="col" data-field="name" data-editable="true">Budget</th>
-                                            <th scope="col" data-field="name" data-editable="true">Date</th>
-                                            <th scope="col" data-field="name" data-editable="true">Lieu</th>
-                                            <th scope="col" data-field="name" data-editable="true">Catégorie</th>
-                                            <th scope="col" data-field="name" data-editable="true">Portée</th>
-                                            <th scope="col" data-field="name" data-editable="true">Besoin</th>
+                                            <th scope="col" data-field="name" data-editable="true">Salles</th>
+                                            <th scope="col" data-field="name" data-editable="true">Chaises</th>
                                             <th scope="col" data-field="name" data-editable="true">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach($avants as $avant)
+                                        @foreach($logistiques as $logistique)
                                         <tr>
                                             <th scope="row">{{$loop->index + 1}}</th>
-                                            <td>{{$avant->nom_event}}</td>
-                                            <td>{{$avant->theme}}</td>
-                                            <td>
-                                                <!-- <a href="{{url($avant->tdr)}}" target="__blank"
-                                                    class="d-flex justify-content-center"> -->
-                                                <!-- <img src="/images/{{$avant->tdr}}" width="60" height="60"> -->
-                                                <a target="_blank" href="{{asset('/images/'.$avant->tdr)}}">
-                                                    <button>afficher</button>
-                                                </a>
-                                                <!-- </a> -->
-                                            </td>
-                                            <td>
-                                                <!-- <a href="{{url($avant->programme_file)}}" target="_blank"
-                                                    class="d-flex justify-content-center"> -->
-                                                <a target="_blank" href="{{asset('/images/'.$avant->tdr)}}">
-                                                    <button>afficher</button>
-                                                </a>
-                                                <!-- </a> -->
-                                            </td>
-                                            <td>{{$avant->budget}}</td>
-                                            <td>{{$avant->date}}</td>
-                                            <td>{{$avant->lieu}}</td>
-                                            <td>{{$avant->cathegorie}}</td>
-                                            <td>{{$avant->portee}}</td>
-                                            <td>
-                                                <!-- <a href="{{url($avant->besoin)}}" target="_blank"
-                                                    class="d-flex justify-content-center"> -->
-                                                <!-- <img src="{{url($avant->besoin)}}"> -->
-                                                <a target="_blank" href="{{asset('/images/'.$avant->besoin)}}">
-                                                    <button>afficher</button>
-                                                </a>
-                                                <!-- </a> -->
+                                            <td>{{$logistique->salle}}</td>
 
-                                            </td>
+
+                                            <td>{{$logistique->chaise}}</td>
+
+
 
                                             <td>
                                                 <div class="columns columns-right btn-group pull-right">
-                                                    <a href="{{route('infos.valider', ['avant'=>$avant->id])}}"> <button
-                                                            type="button" class="btn btn-success"
+                                                    <a
+                                                        href="{{route('logistique.valider', ['logistique'=>$logistique->id])}}">
+                                                        <button type="button" class="btn btn-success"
                                                             onclick="if(confirm('vous êtes entrain de valider cet évènement. cliquez ok pour avertir vos collaborateurs')){document.getElementById('table').submit()}">Valider</button></a>
 
-                                                    <a href="{{route('infos.edit', ['avant'=>$avant->id])}}"><button
+                                                    <a
+                                                        href="{{route('logistique.edit', ['logistique'=>$logistique->id])}}"><button
                                                             type="button" class="btn btn-info">Editer</button></a>
 
                                                     <button type="button" class="btn btn-danger"
-                                                        onclick="if(confirm('Voulez-vous vraiment supprimer cet évènement?')){document.getElementById('form-{{$avant->id}}').submit()}">Supprimer</button>
+                                                        onclick="if(confirm('Voulez-vous vraiment supprimer cet évènement?')){document.getElementById('form-{{$logistique->id}}').submit()}">Supprimer</button>
                                                 </div>
-                                                <form id="form-{{$avant->id}}"
-                                                    action="{{route('avant.supprimer', ['avant'=>$avant->id])}}"
+                                                <form id="form-{{$logistique->id}}"
+                                                    action="{{route('logistique.supprimer', ['logistique'=>$logistique->id])}}"
                                                     method="post">
                                                     @csrf
                                                     <input type="hidden" name="_method" value="delete">

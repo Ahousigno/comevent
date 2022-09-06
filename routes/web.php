@@ -5,6 +5,8 @@ use App\Http\Controllers\AvantController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\InfosController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CommunicationController;
+use App\Http\Controllers\LogistiqueController;
 use App\Http\Controllers\MediaController;
 use App\Http\Controllers\OrganisateurController;
 use App\Http\Controllers\SecretariatController;
@@ -43,10 +45,6 @@ Route::get("/infos", [InfosController::class, "index"])->name("infos");
 Route::post("/infos.store", [InfosController::class, "store"])->name("infos.store");
 
 
-Route::get("/media", [AvantController::class, "indes"])->name("media");
-Route::post("/media.store1", [AvantController::class, "store1"])->name("media.store1");
-
-
 Route::get("/avant", [AvantController::class, "inde"])->name("avant");
 Route::post("/avant.store2", [AvantController::class, "store2"])->name("avant.store2");
 
@@ -74,4 +72,28 @@ Route::get("/secretariat.edit/{courrier}", [SecretariatController::class, "edit"
 Route::put("/secretariat.update/{courrier}", [SecretariatController::class, "update"])->name('secretariat.update');
 Route::get("/secretariat.valider/{courrier}", [SecretariatController::class, "valider"])->name('secretariat.valider');
 
+Route::get("/media", [MediaController::class, "indes"])->name("media");
+Route::post("/media.store1", [MediaController::class, "store1"])->name("media.store1");
 Route::get("/admin.media", [MediaController::class, "index"])->name('admin.media');
+Route::delete("/media.supprimer/{media}", [MediaController::class, "delete"])->name('media.supprimer');
+Route::get("/media.edit/{media}", [MediaController::class, "edit"])->name('media.edit');
+Route::put("/media.update/{media}", [MediaController::class, "update"])->name('media.update');
+Route::get("/media.valider/{media}", [MediaController::class, "valider"])->name('media.valider');
+
+Route::get("/logistique", [LogistiqueController::class, "index"])->name("logistique");
+Route::post("/logistique.store", [LogistiqueController::class, "store"])->name("logistique.store");
+Route::get("/admin.logistique", [LogistiqueController::class, "inde"])->name('admin.logistique');
+Route::delete("/logistique.supprimer/{logistique}", [LogistiqueController::class, "delete"])->name('logistique.supprimer');
+Route::get("/logistique.edit/{logistique}", [LogistiqueController::class, "edit"])->name('logistique.edit');
+Route::put("/logistique.update/{logistique}", [LogistiqueController::class, "update"])->name('logistique.update');
+Route::get("/logistique.valider/{logistique}", [LogistiqueController::class, "valider"])->name('logistique.valider');
+
+Route::get("/communication", [CommunicationController::class, "index"])->name("communication");
+Route::get("/admin.communication", [CommunicationController::class, "inde"])->name("admin.communication");
+
+Route::get("/admin.reunion", [CommunicationController::class, "indese"])->name("admin.reunion");
+Route::post("/admin/reunion.store", [CommunicationController::class, "store"])->name("admin/reunion.store");
+Route::get("/comment", [CommunicationController::class, "indes"])->name("comment");
+
+
+Route::get("/infos.notifier", [InfosController::class, "notifier"])->name('infos.notifier');

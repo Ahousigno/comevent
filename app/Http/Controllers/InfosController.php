@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Infosmail;
 use App\Models\Avant;
+use App\Notifications\Infosnotification;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class InfosController extends Controller
 {
@@ -30,6 +33,7 @@ class InfosController extends Controller
 
     public function store(Request $request)
     {
+        // dd($request->all());
         $request->validate([
 
             "nom_event" => 'required',
@@ -37,20 +41,18 @@ class InfosController extends Controller
             "tdr" => 'required',
             "programme_file" => 'required',
             "budget" => 'required',
-            "date" => 'required',
+            "date_fin" => 'required',
+            "date_debut" => 'required',
             "lieu" => "required",
             "cathegorie" => 'nullable',
             "portee" => 'nullable',
             "besoin" => 'nullable',
-
-
-
+            "liste" => 'nullable',
         ]);
 
         $avant = new Avant();
         $avant->nom_event = $request->nom_event;
         $avant->theme = $request->theme;
-
 
         if ($request->tdr) {
             $image = $request->tdr;
@@ -59,7 +61,6 @@ class InfosController extends Controller
             $avant->tdr = $imageName;
         }
 
-
         if ($request->programme_file) {
             $image = $request->programme_file;
             $imageName = time() . '.' . $image->extension();
@@ -67,7 +68,8 @@ class InfosController extends Controller
             $avant->programme_file = $imageName;
         }
         $avant->budget = $request->budget;
-        $avant->date = $request->date;
+        $avant->date_debut = $request->date_debut;
+        $avant->date_fin = $request->date_fin;
         $avant->lieu = $request->lieu;
         $avant->cathegorie = $request->cathegorie;
         $avant->portee = $request->portee;
@@ -79,8 +81,27 @@ class InfosController extends Controller
             $avant->besoin = $imageName;
         }
 
+        if ($request->liste) {
+            $image = $request->liste;
+            $imageName = time() . '.' . $image->extension();
+            $image->move(public_path("images"), $imageName);
+            $avant->liste = $imageName;
+        }
+        // dd($avant);
+        $mailinterne = ['signo.aviet@uvci.edu.ci', 'georgette.assemian@uvci.edu.ci'];
+        $maildata = [];
+        $maildata['avant'] = $avant;
+        Mail::to($mailinterne)->send(new Infosmail($maildata));
+        // return redirect()->route('infos');
         $avant->save();
-
         return redirect()->route("infos")->with("success",  "votre évènement a été créé avec succès!");
     }
+
+
+    //partie notification
+    // public function notifier(Avant $avant)
+    // {
+
+
+    // }
 }

@@ -15,67 +15,7 @@ use Illuminate\Http\Request;
 class AvantController extends Controller
 {
 
-    public function indes()
-    {
 
-        return view('avant');
-    }
-
-
-    public function store1(Request $request)
-    {
-
-        $request->validate([
-            // media
-            "visuel" => 'nullable',
-            "psd" => 'nullable',
-            "banderole" => 'nullable',
-            "psdo" => 'nullable',
-
-
-        ]);
-
-        $media = new media();
-
-        if ($request->visuel) {
-            $image = $request->visuel;
-            $imageName = time() . '.' . $image->extension();
-            $image->move(public_path("images"), $imageName);
-            $media->visuel = $imageName;
-        }
-
-        if ($request->psd) {
-            $image = $request->psd;
-            $imageName = time() . '.' . $image->extension();
-            $image->move(public_path("images"), $imageName);
-            $media->psd = $imageName;
-        }
-        if ($request->banderole) {
-            $image = $request->banderole;
-            $imageName = time() . '.' . $image->extension();
-            $image->move(public_path("images"), $imageName);
-            $media->banderole = $imageName;
-        }
-        if ($request->psdo) {
-            $image = $request->psdo;
-            $imageName = time() . '.' . $image->extension();
-            $image->move(public_path("images"), $imageName);
-            $media->psdo = $imageName;
-        }
-
-
-
-        // if ($request->courier) {
-        //     $image = $request->courier;
-        //     $imageName = time() . '.' . $image->extension();
-        //     $image->move(public_path("images"), $imageName);
-        //     $avant->courier = $imageName;
-        // }
-        // $avant->email_courier = $request->email_courier;
-
-        $media->save();
-        return redirect()->route("avant")->with("success",  "vos visuels ont été soumis avec succès!");
-    }
 
 
 

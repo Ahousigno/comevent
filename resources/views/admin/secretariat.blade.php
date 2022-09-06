@@ -85,9 +85,9 @@
                                     <!-- <table class="table"> -->
                                     <thead>
                                         <th data-field="id">ID</th>
+                                        <!-- <th>liste des invités et suivis des couriers</th> -->
                                         <tr>
-                                            <th scope="col" data-field="id">liste des invités et suivis des couriers
-                                            </th>
+                                            <th scope="col" data-field="id">#</th>
                                             <th scope="col" data-field="name" data-editable="true">Nom de l'invité</th>
                                             <th scope="col" data-field="name" data-editable="true">Fonction de l'invité
                                             </th>

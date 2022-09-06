@@ -13,12 +13,12 @@
     <div style="margin: 20px 10px;">
 
         <h4 style="margin-left: 25px; font-size:25px">
-            Service Communication</h4>
+            Sous-Direction de la Communication</h4>
 
         <div style="margin-left: 25px;">
             <p style="margin-left: 25px; font-size:15px">
                 <br>
-                Bonjour chers collaborateur,<br>
+                Bonjour chers collaborateurs,<br>
                 un évènement vient d'être validé. Merci à chacun de prendre ses
                 dispositions pour la réussite de notre évènement.
                 <br>

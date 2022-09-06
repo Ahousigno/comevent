@@ -43,7 +43,7 @@
 
                                 <div class="fixed-table-toolbar">
                                     <div class="bs-bars pull-left">
-                                        {{$avants->links()}}
+
                                     </div>
                                     <div>
 
@@ -86,17 +86,19 @@
                                     <thead>
                                         <th data-field="id">ID</th>
                                         <tr>
-                                            <th scope="col" data-field="id">#</th>
+                                            <th scope="col" data-field="id">N°</th>
                                             <th scope="col" data-field="name" data-editable="true">Nom</th>
                                             <th scope="col" data-field="name" data-editable="true">Thème</th>
                                             <th scope="col" data-field="name" data-editable="true">TDR</th>
                                             <th scope="col" data-field="name" data-editable="true">Programme</th>
                                             <th scope="col" data-field="name" data-editable="true">Budget</th>
-                                            <th scope="col" data-field="name" data-editable="true">Date</th>
+                                            <th scope="col" data-field="name" data-editable="true">Date début</th>
+                                            <th scope="col" data-field="name" data-editable="true">Date fin</th>
                                             <th scope="col" data-field="name" data-editable="true">Lieu</th>
                                             <th scope="col" data-field="name" data-editable="true">Catégorie</th>
                                             <th scope="col" data-field="name" data-editable="true">Portée</th>
                                             <th scope="col" data-field="name" data-editable="true">Besoin</th>
+                                            <th scope="col" data-field="name" data-editable="true">Liste invités</th>
                                             <th scope="col" data-field="name" data-editable="true">Action</th>
                                         </tr>
                                     </thead>
@@ -106,39 +108,25 @@
                                             <th scope="row">{{$loop->index + 1}}</th>
                                             <td>{{$avant->nom_event}}</td>
                                             <td>{{$avant->theme}}</td>
-                                            <td>
-                                                <!-- <a href="{{url($avant->tdr)}}" target="__blank"
-                                                    class="d-flex justify-content-center"> -->
-                                                <!-- <img src="/images/{{$avant->tdr}}" width="60" height="60"> -->
-                                                <a target="_blank" href="{{asset('/images/'.$avant->tdr)}}">
+                                            <td><a target="_blank" href="{{asset('/images/'.$avant->tdr)}}">
                                                     <button>afficher</button>
-                                                </a>
-                                                <!-- </a> -->
-                                            </td>
-                                            <td>
-                                                <!-- <a href="{{url($avant->programme_file)}}" target="_blank"
-                                                    class="d-flex justify-content-center"> -->
-                                                <a target="_blank" href="{{asset('/images/'.$avant->tdr)}}">
+                                                </a></td>
+                                            <td><a target="_blank" href="{{asset('/images/'.$avant->programme_file)}}">
                                                     <button>afficher</button>
-                                                </a>
-                                                <!-- </a> -->
-                                            </td>
+                                                </a></td>
                                             <td>{{$avant->budget}}</td>
-                                            <td>{{$avant->date}}</td>
+                                            <td>{{$avant->date_debut}}</td>
+                                            <td>{{$avant->date_fin}}</td>
                                             <td>{{$avant->lieu}}</td>
                                             <td>{{$avant->cathegorie}}</td>
                                             <td>{{$avant->portee}}</td>
-                                            <td>
-                                                <!-- <a href="{{url($avant->besoin)}}" target="_blank"
-                                                    class="d-flex justify-content-center"> -->
-                                                <!-- <img src="{{url($avant->besoin)}}"> -->
-                                                <a target="_blank" href="{{asset('/images/'.$avant->besoin)}}">
+                                            <td><a target="_blank" href="{{asset('/images/'.$avant->besoin)}}">
+                                                    <button>afficher</button>
+                                                </a></td>
+                                            <td><a target="_blank" href="{{asset('/images/'.$avant->liste)}}">
                                                     <button>afficher</button>
                                                 </a>
-                                                <!-- </a> -->
-
                                             </td>
-
                                             <td>
                                                 <div class="columns columns-right btn-group pull-right">
                                                     <a href="{{route('infos.valider', ['avant'=>$avant->id])}}"> <button
@@ -158,15 +146,12 @@
                                                     <input type="hidden" name="_method" value="delete">
                                                 </form>
                                             </td>
-
                                         </tr>
-
                                         @endforeach
                                     </tbody>
-
                                 </table>
 
-
+                                {!! $avants->links() !!}
 
                             </div>
                         </div>

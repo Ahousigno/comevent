@@ -87,9 +87,9 @@
                                             <th scope="col" data-field="id">#</th>
                                             <th scope="col" data-field="name" data-editable="true">Visuel final</th>
                                             <th scope="col" data-field="name" data-editable="true">Visuel PSD</th>
-                                            <th scope="col" data-field="name" data-editable="true">TDR</th>
                                             <th scope="col" data-field="name" data-editable="true">Bandrole final</th>
                                             <th scope="col" data-field="name" data-editable="true">Banderole PSD</th>
+                                            <th scope="col" data-field="name" data-editable="true">lien_media</th>
                                             <th scope="col" data-field="name" data-editable="true">Action</th>
                                         </tr>
                                     </thead>
@@ -97,18 +97,39 @@
                                         @foreach($medias as $media)
                                         <tr>
                                             <th scope="row">{{$loop->index + 1}}</th>
-                                            <td><img src="/images/{{$media->visuel}}"></td>
-                                            <td><img src="/images/{{$media->psd}}"></td>
-                                            <td><img src="/images/{{$media->banderole}}"></td>
-                                            <td><img src="/images/{{$media->psdo}}"></td>
+                                            <td><a target="_blank" href="{{asset('/images/'.$media->visuel)}}">
+                                                    <button>afficher</button>
+                                                </a></td>
+                                            <td><a target="_blank" href="{{asset('/images/'.$media->psd)}}">
+                                                    <button>afficher</button>
+                                                </a></td>
+                                            <td><a target="_blank" href="{{asset('/images/'.$media->banderole)}}">
+                                                    <button>afficher</button>
+                                                </a></td>
+                                            <td><a target="_blank" href="{{asset('/images/'.$media->psdo)}}">
+                                                    <button>afficher</button>
+                                                </a></td>
+                                            <td>{{$media->lien_media}}</td>
                                             <td>
                                                 <div class="columns columns-right btn-group pull-right">
-                                                    <button type="button" class="btn btn-success">Valider</button>
+                                                    <a href="{{route('media.valider', ['media'=>$media->id])}}">
+                                                        <button type="button" class="btn btn-success"
+                                                            onclick="if(confirm('vous êtes entrain de valider le visuel. cliquez ok pour avertir vos collaborateurs')){document.getElementById('media').submit()}">Valider</button></a>
 
-                                                    <button type="button" class="btn btn-info">Editer</button></a>
+                                                    <a href="{{route('media.edit', ['media'=>$media->id])}}"><button
+                                                            type="button" class="btn btn-info">Editer</button></a>
 
-                                                    <button type="button" class="btn btn-danger">Supprimer</button>
+                                                    <button type="button" class="btn btn-danger"
+                                                        onclick="if(confirm('Voulez-vous vraiment supprimer cet évènement?')){document.getElementById('form-{{$media->id}}').submit()}">Supprimer</button>
+                                                    <a href="{{route('comment', ['media'=>$media->id])}}"><button
+                                                            type="button" class="btn btn-info">commenter</button></a>
                                                 </div>
+                                                <form id="form-{{$media->id}}"
+                                                    action="{{route('media.supprimer', ['media'=>$media->id])}}"
+                                                    method="post">
+                                                    @csrf
+                                                    <input type="hidden" name="_method" value="delete">
+                                                </form>
 
                                             </td>
 

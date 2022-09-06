@@ -20,11 +20,13 @@ return new class extends Migration
             $table->string('tdr');
             $table->string('programme_file');
             $table->string('budget');
-            $table->string('date');
+            $table->string('date_debut');
+            $table->string('date_fin');
             $table->text('lieu');
             $table->string('cathegorie')->nullable();
             $table->string('portee')->nullable();
             $table->string('besoin')->nullable();
+            $table->string('liste')->nullable();
 
             // $table->string('email_courier')->nullable();
             $table->timestamps();

@@ -53,13 +53,15 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="nom">Nom et prénom de l'invité<span style="color: red;"></span></label>
-                            <input type="text" id="nom_invite" class="form-control" name="nom_invite">
+                            <input type="text" id="nom_invite" class="form-control" name="nom_invite"
+                                value="{{$courrier->nom_invite}}">
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="prenom">fonction de l'invité<span style="color: red;"></span></label>
-                            <input type="text" id="fonction_invite" class="form-control" name="fonction_invite">
+                            <input type="text" id="fonction_invite" class="form-control" name="fonction_invite"
+                                value="{{$courrier->fonction_invite}}">
                         </div>
                     </div>
                 </div>
@@ -67,7 +69,8 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="form-group">
-                            <select class="form-select" aria-label="Default select example" type="text" name="role">
+                            <select class="form-select" aria-label="Default select example" type="text" name="role"
+                                value="{{$courrier->role}}">
                                 <option selected>rôle au cours de lévènement</option>
                                 <option value="Parrain">Parrain</option>
                                 <option value="Invité d'honneur">Invité d'honneur</option>
@@ -79,7 +82,7 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="prenom"><select class="form-select" aria-label="Default select example"
-                                    type="text" name="etat">
+                                    type="text" name="etat" value="{{$courrier->etat}}">
                                     <option selected>Etat du courier</option>
                                     <option value="Confirmé">Confimé</option>
                                     <option value="non-confirmé">non-confimé</option>
@@ -92,7 +95,8 @@
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <label for="prenom">charger le courrier<span style="color: red;"></span></label>
-                                <input type="file" id="courier" class="form-control" name="courier">
+                                <input type="file" id="courier" class="form-control" name="courier"
+                                    value="{{$courrier->courier}}">
 
                             </div>
                         </div>
