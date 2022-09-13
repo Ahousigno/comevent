@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('heure_debut')->nullable();
             $table->string('heure_fin')->nullable();
             $table->string('canal')->nullable();
-            $table->string('lein_reunion')->nullable();
+            $table->string('lien_reunion')->nullable();
             $table->timestamps();
         });
     }

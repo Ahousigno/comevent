@@ -121,8 +121,8 @@
 
                                                     <button type="button" class="btn btn-danger"
                                                         onclick="if(confirm('Voulez-vous vraiment supprimer cet évènement?')){document.getElementById('form-{{$media->id}}').submit()}">Supprimer</button>
-                                                    <a href="{{route('comment', ['media'=>$media->id])}}"><button
-                                                            type="button" class="btn btn-info">commenter</button></a>
+                                                    <a href=" mailto:medias@uvci.edu.ci"><button type="button"
+                                                            class="btn btn-info">commenter</button></a>
                                                 </div>
                                                 <form id="form-{{$media->id}}"
                                                     action="{{route('media.supprimer', ['media'=>$media->id])}}"

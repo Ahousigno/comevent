@@ -28,7 +28,7 @@ class Logistiquemail extends Mailable
      */
     public function build()
     {
-        return $this->subject('visuel ajouté')
+        return $this->subject('salle choisie')
             ->view('emails.maillogistique');
     }
 }

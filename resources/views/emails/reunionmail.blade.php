@@ -19,10 +19,10 @@
             <p style="margin-left: 25px; font-size:15px">
                 <br>
                 Bonjour chers collaborateurs,<br>
-                un nouvel invité vient d'être ajouté pour l'évènement.
+                Une réunion vient d'être programée pour l'organisation de l'évènement en cours.
                 <br>
 
-                <a style="text-decoration: none; color: red;" href="{{$data['courrier']->fonction_invite}}"
+                <a style="text-decoration: none; color: red;" href="{{$data['reunion']->ordre}}"
                     target="_blank">ci-joint les informations</a>
             </p>
         </div><br>

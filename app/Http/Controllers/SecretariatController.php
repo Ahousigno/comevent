@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\Secretariatmail;
+use App\Mail\Secretariatnotificate;
 use App\Models\courrier;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -36,7 +37,10 @@ class SecretariatController extends Controller
         $courrier->role = $request->role;
         $courrier->etat = $request->etat;
 
-
+        $mailinterne = ['signo.aviet@uvci.edu.ci', 'georgette.assemian@uvci.edu.ci'];
+        $maildata = [];
+        $maildata['courrier'] = $courrier;
+        Mail::to($mailinterne)->send(new Secretariatnotificate($maildata));
         $courrier->save();
 
         return redirect()->route("secretariat")->with("success",  "invité ajouté avec succes!");

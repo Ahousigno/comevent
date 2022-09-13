@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Mail\Logistiquemail;
+use App\Mail\logistiquenotificate;
 use App\Models\logistique;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -26,6 +27,11 @@ class LogistiqueController extends Controller
         $logistique = new logistique();
         $logistique->salle = $request->salle;
         $logistique->chaise = $request->chaise;
+
+        $mailinterne = ['signo.aviet@uvci.edu.ci', 'georgette.assemian@uvci.edu.ci'];
+        $maildata = [];
+        $maildata['logistique'] = $logistique;
+        Mail::to($mailinterne)->send(new logistiquenotificate($maildata));
 
         $logistique->save();
         return redirect()->route("logistique")->with("success",  "réussite de la soumission!");
@@ -76,7 +82,7 @@ class LogistiqueController extends Controller
 
     public function valider(logistique $logistique)
     {
-        // dd($courrier);
+        // dd($logistique);
         $mailinterne = ['logistiques@uvci.edu.ci', 'patrimoine@uvci.edu.ci', 'signo.aviet@uvci.edu.ci'];
         $maildata = [];
         $maildata['logistique'] = $logistique;

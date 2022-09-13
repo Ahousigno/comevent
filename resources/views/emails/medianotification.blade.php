@@ -18,12 +18,12 @@
         <div style="margin-left: 25px;">
             <p style="margin-left: 25px; font-size:15px">
                 <br>
-                Bonjour chers collaborateurs,<br>
-                un nouvel invité vient d'être ajouté pour l'évènement.
+                Bonjour <br>
+                les visuels de l'évènement viennent d'être soumis.
                 <br>
 
-                <a style="text-decoration: none; color: red;" href="{{$data['courrier']->fonction_invite}}"
-                    target="_blank">ci-joint les informations</a>
+                <a style="text-decoration: none; color: red;" href="{{Route('admin.media')}}" target="_blank">Consulter
+                </a>
             </p>
         </div><br>
 

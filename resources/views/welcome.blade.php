@@ -44,10 +44,9 @@
                                                 <img src="..." class="card-img-top" alt="...">
                                                 <div class="card-body">
                                                     <h5 class="card-title">Service Communication</h5>
-                                                    <p class="card-text">Some quick example text to build on the card
-                                                        title and make
-                                                        up the bulk of the card's content.</p>
-                                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                    <p class="card-text">En charge de la supervision de l'évènement.</p>
+                                                    <a href="{{route('communication')}}"
+                                                        class="btn btn-primary">Communication</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -56,10 +55,8 @@
                                                 <img src="..." class="card-img-top" alt="...">
                                                 <div class="card-body">
                                                     <h5 class="card-title">Service Média</h5>
-                                                    <p class="card-text">Some quick example text to build on the card
-                                                        title and make
-                                                        up the bulk of the card's content.</p>
-                                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                    <p class="card-text">En charge de la Création des visuels.</p>
+                                                    <a href="{{route('media')}}" class="btn btn-primary">Media</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -68,10 +65,9 @@
                                                 <img src="..." class="card-img-top" alt="...">
                                                 <div class="card-body">
                                                     <h5 class="card-title">Serivice Logistique</h5>
-                                                    <p class="card-text">Some quick example text to build on the card
-                                                        title and make
-                                                        up the bulk of the card's content.</p>
-                                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                    <p class="card-text">En charge de la disponibilité des salles.</p>
+                                                    <a href="{{route('logistique')}}"
+                                                        class="btn btn-primary">Logistique</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -80,10 +76,10 @@
                                                 <img src="..." class="card-img-top" alt="...">
                                                 <div class="card-body">
                                                     <h5 class="card-title">Service Secrétariat</h5>
-                                                    <p class="card-text">Some quick example text to build on the card
-                                                        title and make
-                                                        up the bulk of the card's content.</p>
-                                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                    <p class="card-text">En charge de l'envoie des courriers de
+                                                        l'évènement.</p>
+                                                    <a href="{{route('secretariat')}}"
+                                                        class="btn btn-primary">Secretariat</a>
                                                 </div>
                                             </div>
                                         </div>

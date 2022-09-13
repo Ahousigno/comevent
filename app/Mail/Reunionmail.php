@@ -7,10 +7,11 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class Infosmail extends Mailable
+class Reunionmail extends Mailable
 {
     use Queueable, SerializesModels;
     public $data;
+
     /**
      * Create a new message instance.
      *
@@ -28,8 +29,7 @@ class Infosmail extends Mailable
      */
     public function build()
     {
-        return $this->subject('soumission d\'évènement')
-            ->view('emails.infosmail');
-        // ->attach(public_path('images/{{$avant->tdr}}'));
+        return $this->subject('Nouvelle réunion')
+            ->view('emails.reunionmail');
     }
 }

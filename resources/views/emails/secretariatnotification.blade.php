@@ -19,11 +19,11 @@
             <p style="margin-left: 25px; font-size:15px">
                 <br>
                 Bonjour <br>
-                un évènement vient d'être soumis.
+                un nouvel invité a été ajouté.
                 <br>
 
-                <a style="text-decoration: none; color: red;" href="{{$data['avant']}}" target="_blank">Voir
-                    l'évènement
+                <a style="text-decoration: none; color: red;" href="{{route('admin.secretariat')}}" target="_blank">Voir
+
                 </a>
             </p>
         </div><br>

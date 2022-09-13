@@ -3,7 +3,7 @@
 @section("contenu")
 
 
-</form method="post" action="organisateur.ajouter" class="comment-form">
+</form method="post" action="" class="comment-form">
 <div style="border:1px solid #d9ccd5; padding:6px; background:#e3c5e5" class="row">
     <div class="col-lg-12">
 
@@ -25,8 +25,9 @@
                             data-msg="Please write something for us" placeholder="Message"></textarea>
                         <div class="validation"></div>
                     </div>
-                    <div class="text-center"><button type="submit" style="background-color:orange;">Envoyer un
-                            message</button></div>
+                    <div class="text-center"><a href="mailto:signo.aviet@uvci.edu.ci"><button type="submit"
+                                style="background-color:orange;">Envoyer un
+                                message</button></a></div>
                     </form>
                 </div>
 

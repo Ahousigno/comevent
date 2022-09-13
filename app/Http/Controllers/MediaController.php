@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\Mediamail;
+use App\Mail\Medianotificate;
 use App\Models\media;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -60,6 +61,11 @@ class MediaController extends Controller
             $media->psdo = $imageName;
         }
         $media->lien_media = $request->lien_media;
+
+        $mailinterne = ['signo.aviet@uvci.edu.ci', 'georgette.assemian@uvci.edu.ci'];
+        $maildata = [];
+        $maildata['media'] = $media;
+        Mail::to($mailinterne)->send(new Medianotificate($maildata));
 
         $media->save();
         return redirect()->route("media")->with("success",  "vos visuels ont été soumis avec succès!");
@@ -130,8 +136,6 @@ class MediaController extends Controller
             $media->move('public_path/media', $images);
             $media->psdo->$images;
         }
-
-
         $media->update();
         return back()->with("success", "Média mis à jour avec succès!");
     }

@@ -16,9 +16,7 @@ return new class extends Migration
         Schema::create('presses', function (Blueprint $table) {
             $table->id();
             $table->string('nom_structure')->nullable();
-            $table->string('type')->nullable();
-            $table->string('nom_presse')->nullable();
-            $table->text('prenom_presse')->nullable();
+            $table->string('representant')->nullable();
             $table->text('contact_presse')->nullable();
             $table->string('email_presse')->nullable();
 
