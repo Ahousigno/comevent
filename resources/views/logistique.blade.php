@@ -40,7 +40,7 @@
                         <div class="form-group">
                             <h5>Salle mise à disposition</h5>
                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault" name="salle">
                                 AULA
                             </label>
                         </div>

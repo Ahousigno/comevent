@@ -8,6 +8,7 @@ use App\Models\Organisateur;
 use App\Models\Presse;
 use App\Models\Reunion;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 
 class CommunicationController extends Controller
@@ -33,8 +34,14 @@ class CommunicationController extends Controller
 
     public function inde()
     {
-        return view('admin.communication');
+        $communications = Http::get('https://rh.uvci.edu.ci/drhuvci/public/api/pat_ens')->collect();
+
+        return view('admin.communication', [
+            'communications' => $communications,
+        ]);
     }
+
+
     public function create(Reunion $reunion)
     {
 

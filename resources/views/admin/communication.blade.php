@@ -133,24 +133,45 @@
                         <div class="form-group">
                             <select class="form-select" aria-label="Default select example" type="text" name="etat">
                                 <option selected>Responsable</option>
-                                <option value="Confirmé">Confimé</option>
-                                <option value="non-confirmé">non-confimé</option>
-                                <option value="non-accepté">non-accepté</option>
+                                @foreach($communications as $communication)
+                                <option value="{{$communication['email']}}">{{$communication['email']}}</option>
+                                @endforeach
                             </select><span style="color: red;"></span></label>
 
                         </div>
                     </div>
                     <div class="col-sm-4">
+                        <!-- <div class="form-group">
+                            <input class="form-check-input" aria-label="Default select example" type="checkbox"
+                                name="membre">
+                            <option selected>Membre</option>
+                            @foreach($communications as $communication)
+                            <option value="{{$communication['email']}}">{{$communication['email']}}</option>
+                            @endforeach
+                            </select><span style="color: red;"></span></label> -->
+
+
                         <div class="form-group">
-                            <select class="form-select" aria-label="Default select example" type="text" name="etat">
-                                <option selected>Membre</option>
-                                <option value="Confirmé">Confimé</option>
-                                <option value="non-confirmé">non-confimé</option>
-                                <option value="non-accepté">non-accepté</option>
-                            </select><span style="color: red;"></span></label>
+                            <h5>Membres</h5>
+                            @foreach($communications as $communication)
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault" name="membre">
+                                {{$communication['email']}}
+                            </label>
+                            @endforeach
 
                         </div>
                     </div>
+                </div>
+
+                <div class="form-group">
+                    <select class="select" multiple>
+                        <option selected>Membres</option>
+                        @foreach($communications as $communication)
+                        <option value="{{$communication['email']}}">{{$communication['email']}}</option>
+                        @endforeach
+                    </select>
+                    <label class="form-label select-label">Example label</label>
                 </div>
 
                 </br></br></br></br>
@@ -254,5 +275,6 @@
 </div>
 </div>
 </div>
+
 
 @endsection
