@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\Mediamail;
 use App\Mail\Medianotificate;
-use App\Models\media;
+use App\Models\Media;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -77,7 +77,7 @@ class MediaController extends Controller
 
     public function index()
     {
-        $medias = media::paginate(5);
+        $medias = Media::paginate(5);
         return view('admin.media', compact("medias"));
     }
 

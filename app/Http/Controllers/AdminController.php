@@ -9,9 +9,14 @@ use Illuminate\Support\Facades\Mail;
 
 class AdminController extends Controller
 {
+    // public function index()
+    // {
+    //     Mail::to('signo.aviet@uvci.edu.ci')->send(new ConfirmeMail());
+    //     return view('admin.index');
+    // }
+
     public function index()
     {
-        Mail::to('signo.aviet@uvci.edu.ci')->send(new ConfirmeMail());
         return view('admin.index');
     }
 }
