@@ -1,0 +1,49 @@
+#nav-bar{
+    background-color:#95278f;
+}
+.navbar-dark .navbar-nav #nav-link {
+    color: white;
+    font-size: large;
+    font-weight: bold;
+}
+
+.navbar-dark .navbar-nav #nav-link:hover{
+    color: rgb(18, 166, 80);
+    font-size: large;
+    font-weight: bold;
+}
+.banner .text {
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 1.2em;
+    font-size: 35px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    vertical-align: middle;
+    display: table-cell;
+    text-align: center;
+}
+.banner {
+    height: 520px;
+    background-image: url(https://rh.uvci.edu.ci/drhuvci/public/bannner_rh1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.55);
+    height: 520px;
+    display: table;
+    color: white;
+}
+
+.container-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
