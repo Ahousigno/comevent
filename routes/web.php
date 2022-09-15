@@ -92,7 +92,7 @@ Route::get("/communication", [CommunicationController::class, "index"])->name("c
 Route::get("/admin.communication", [CommunicationController::class, "inde"])->name("admin.communication");
 
 Route::get("/admin.reunion", [CommunicationController::class, "indese"])->name("admin.reunion");
-Route::post("/reunion.store", [CommunicationController::class, "store"])->name("/reunion.store");
+Route::post("/reunion.store", [CommunicationController::class, "store"])->name("reunion.store");
 Route::get("/infos.notifier", [InfosController::class, "notifier"])->name('infos.notifier');
 Route::get("/admin.presse", [CommunicationController::class, "indes"])->name("admin.presse");
 Route::post("/presse.stone", [CommunicationController::class, "indes"])->name("presse.stone");
