@@ -13,15 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('medias', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 191);
-            $table->string('pname', 191);
-            $table->string('email', 191)->unique();
-            $table->string('service', 191)->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->string('visuel', 191);
+            $table->string('banderole', 191);
+            $table->string('lien_media', 191);
+
+            $table->unsignedBigInteger('event_id');
+            $table->foreign('event_id')->references('id')->on('evenements')->onDelete('cascade');
+
             $table->timestamps();
         });
     }
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('media');
     }
 };

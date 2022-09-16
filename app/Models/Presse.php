@@ -8,7 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Presse extends Model
 {
     use HasFactory;
-    protected $table = 'presses';
 
-    protected $guarded = ['id'];
+    protected $fillable = [
+        'nom_presse',
+        'nom_representant',
+        'email_representant',
+        'contact_representant',
+    ];
+
+    public function events(){
+        return $this->belongsToMany(Evenement::class);
+    }
 }

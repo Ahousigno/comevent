@@ -5,18 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Reunion extends Model
+class Fin_Evenement extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'ordre_jour',
-        'date_reunion',
-        'heure_debut',
-        'heure_fin',
-        'canal',
-        'lien_reunion',
+        'lettre_remerciements',
+        'rapport',
+        'articles',
+        'medias',
+        'lien_event',
         'event_id',
-            
     ];
 }
