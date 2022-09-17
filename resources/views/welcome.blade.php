@@ -3,55 +3,56 @@
 @section("contenu")
     <div class="content bg-light">
         <div class="banner">
-            <div class="overlay container-fluid">
+            <div class="overlay container-fluid mt-2">
                 {{--<img typeof="foaf:Image" src="https://rh.uvci.edu.ci/drhuvci/public/bannner_rh1.jpg" width="100%" height="500px" alt="" />--}}
                 <h2 class="text">
                     Bienvenue au service Juridique, Partenariat et Communication de
                     L'Université
                     Virtuelle de Côte d'Ivoire
                 </h2>
+                <h3 class="text2">Vous êtes sur notre plateforme de l'évènementiel</h3>
             </div>
         </div>
     </div>
     <div class="container text-center">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 mt-4 mb-4">
             <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
+                <div class="card mb-3" style="width: 17rem;">
+                    <img src="{{asset('service/images/communication.png')}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Service Communication</h5>
                         <p class="card-text">En charge de la supervision de l'évènement.</p>
-                        <a href="{{route('communication')}}" class="btn btn-primary">Communication</a>
+                        <a href="{{route('communication')}}" class="btn btn-primary" id="btn">Communication</a>
                     </div>
                 </div>
             </div>
             <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img src="" class="card-img-top" alt="...">
+                <div class="card mb-3" style="width: 17rem;">
+                    <img src="{{asset('service/images/media.png')}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Service Média</h5>
                         <p class="card-text">En charge de la Création des visuels.</p>
-                        <a href="{{route('media')}}" class="btn btn-primary">Media</a>
+                        <a href="{{route('media')}}" class="btn btn-primary" id="btn">Media</a>
                     </div>
                 </div>
             </div>
             <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
+                <div class="card" style="width: 17rem;">
+                    <img src="{{asset('service/images/logistique.jpg')}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Serivice Logistique</h5>
                         <p class="card-text">En charge de la disponibilité des salles.</p>
-                        <a href="{{route('logistique')}}"class="btn btn-primary">Logistique</a>
+                        <a href="{{route('logistique')}}" class="btn btn-primary" id="btn">Logistique</a>
                     </div>
                 </div>
             </div>
             <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
+                <div class="card" style="width: 17rem;">
+                    <img src="{{asset('service/images/secretariat.jpg')}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Service Secrétariat</h5>
                         <p class="card-text">En charge de l'envoie des courriers de l'évènement.</p>
-                        <a href="{{route('secretariat')}}" class="btn btn-primary">Secretariat</a>
+                        <a href="{{route('secretariat')}}" class="btn btn-primary" id="btn">Secretariat</a>
                     </div>
                 </div>
             </div>

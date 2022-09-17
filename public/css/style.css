@@ -1,27 +1,51 @@
 #nav-bar{
-    background-color:#95278f;
+    background-color: white;
+    padding: 0;
 }
 .navbar-dark .navbar-nav #nav-link {
-    color: white;
+    /**color: #92278f;**/
+    color: #92278f;
     font-size: large;
+    padding-left: 20px;
     font-weight: bold;
 }
-
 .navbar-dark .navbar-nav #nav-link:hover{
     color: rgb(18, 166, 80);
     font-size: large;
-    font-weight: bold;
 }
 .banner .text {
     color: #fff;
-    text-transform: uppercase;
     line-height: 1.2em;
-    font-size: 35px;
     font-weight: bold;
     letter-spacing: 3px;
     vertical-align: middle;
-    display: table-cell;
+    margin-top: 100px;
     text-align: center;
+}
+.banner .text2{
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.banner .text2{
+    color: #ffffff;
+    animation-name: color;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes color {
+    25%{
+        color: #f503ef;
+    }
+    50% {
+        color: rgb(0, 253, 107);
+    }
+    100% {
+        color: white;
+    }
 }
 .banner {
     height: 520px;
@@ -31,14 +55,12 @@
     background-size: cover;
     position: relative;
 }
-
 .overlay {
     background-color: rgba(0, 0, 0, 0.55);
     height: 520px;
     display: table;
     color: white;
 }
-
 .container-fluid {
     width: 100%;
     padding-right: 15px;
@@ -46,4 +68,29 @@
     margin-right: auto;
     margin-left: auto;
 }
+.container .card .card-img-top{
+    height: 160px;
+}
+#btn {
+    background-color: rgb(18, 166, 80);
+    border-color: rgb(18, 166, 80);
+    color: white;
+}
+.container .card-title{
+    color: black;
+    font-weight: bold;
+}
+.topnav {
+    background-color: #92278f;
+    overflow: hidden;
+    height: 10px;
+}
+.bottomnav {
+    background-color: #E5E5E5;
+}
+.navbar-dark .navbar-toggler-icon {
+    background-color: rgb(18, 166, 80);
+    display: inline-block;
+}
 
+.navbar
